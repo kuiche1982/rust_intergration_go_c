@@ -4,12 +4,16 @@
 #include <ostream>
 #include <new>
 
+struct GoSlice {
+  void *data;
+  uintptr_t len;
+  uintptr_t cap;
+};
+
 extern "C" {
 
-void print_hello_from_rust();
+GoSlice process_slice(GoSlice input);
 
-uint8_t print_hello_from_rust2(uint8_t a);
-
-size_t (new_pslice(size_t len, const uint8_t *v_ptr))[2];
+void free_rust_slice(void *ptr, uintptr_t len);
 
 } // extern "C"
