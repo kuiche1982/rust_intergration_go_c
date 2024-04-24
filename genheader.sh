@@ -1,0 +1,1 @@
+cbindgen --output c/cinterop.h
